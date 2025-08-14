@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Element In Array</title>
+</head>
+<body>
+    <input type="text" name="position" placeholder="Please Enter Position" id="position" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+    <input type="text" name="new_element" placeholder="Please Enter Insert element" id="newEl" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+    <button type="submit" onclick="insertEl()">Submit</button>
+   <script>
+function insertEl() {
+    let data = [60, 20, 10, 36, 70, 40];
+    let newEl = parseInt(document.getElementById('newEl').value, 10);
+    let position = parseInt(document.getElementById('position').value, 10);
+
+    if (isNaN(newEl) || isNaN(position)) {
+        alert("Please enter valid numbers");
+        return;
+    }
+
+    if (position < 0 || position > data.length) {
+        alert(`Please enter a position between 0 and ${data.length}`);
+        return;
+    }
+
+    console.warn("Before:", data);
+
+    // Shift elements to the right
+    for (let i = data.length; i > position; i--) {
+        data[i] = data[i - 1];
+    }
+
+    // Insert new element
+    data[position] = newEl;
+
+    console.warn("After:", data);
+}
+        
+    </script>
+</body>
+</html>

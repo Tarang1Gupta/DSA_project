@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Element by JS</title>
+</head>
+<body>
+    <input type="text" id="position" placeholder="Enter the position">
+    <input type="text" id="newEl" placeholder="Enter the position">
+    <button type="submit" onclick="deleteEl()">Submit</button>
+</body>
+<script>
+    function deleteEl(){
+        let data = [32,55,12,10,20,45];
+        let position = parseInt(document.getElementById('position').value,10);
+        let newEl = parseInt(document.getElementById('newEl').value);
+        
+        for(let i = position; i <data.length-1;i++){
+            data[i] = data[i+1];
+        }
+        data.length = data.length-1;
+        console.warn(data);
+    }
+</script>
+</html>
