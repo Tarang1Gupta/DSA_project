@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="searchEl" id="searchEl">
+    <button type="submit" onclick="SearchEl1()">Submit</button>
+</body>
+
+<script>
+    function SearchEl1(){
+        const data = [45,34,78,98,90,34,65];
+        let item = document.getElementById('searchEl').value;
+        let index = [];
+        for(let i = 1;i<data.length;i++){
+            // console.log(data[i]);
+            if(data[i]===parseInt(item)){
+                index.push(i);
+            }
+        }
+        console.log(index);
+    }
+    
+</script>
+</html>
