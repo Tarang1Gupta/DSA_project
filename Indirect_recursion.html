@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direct Recursion</title>
+</head>
+<body>
+    
+    <script>
+        let money = 100;
+        let totalApple = 0;
+        function buyApple(x){
+            if(x > 0){
+                console.log("I have ", x , "Rs", totalApple, "apple.");
+                buyMore(x);
+            }else{
+                console.log("I don't have more  money", totalApple);
+            }
+        }
+
+        function buyMore(x){
+            totalApple++;
+            buyApple(x-10);
+        }
+
+        buyApple(money);
+
+
+    </script>
+</body>
+</html>
