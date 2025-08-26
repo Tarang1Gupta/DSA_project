@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursion for Given Number</title>
+</head>
+<body>
+    <label for="no_id">Give a number for recursion: </label>
+    <input type="text" id="no_id">
+    <p id="value"></p>
+
+    <script>
+        const givenNumber = document.getElementById('no_id');
+        const givenValue = document.getElementById('value');
+
+        givenNumber.addEventListener("input", updateValue);
+
+        function updateValue(e) {
+            const num = parseInt(e.target.value);
+            if (!isNaN(num) && num > 0) {
+                givenValue.textContent = printNos(num);
+            } else {
+                givenValue.textContent = '';
+            }
+        }
+
+        function printNos(n) {
+            if (n === 0) return '';
+            return printNos(n - 1) + n + ' ';
+        }
+    </script>
+</body>
+</html>

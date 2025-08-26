@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let data = [7,12,64,3,13,9,0];
+        let temp;
+        function customReverese(data,start,end){
+            console.log(data);
+            if(start <= end){
+                temp = data[start];
+                data[start] = data[end];
+                data[end] = temp;
+                customReverese(data, start + 1, end -1);
+            }
+        }
+        customReverese(data, 0, data.length -1);
+    </script>
+</body>
+</html>
